@@ -20,7 +20,7 @@ export const sceniuses: Scenius[] = [
     historicalSignificance: 'Pioneered modern engineering practices and infrastructure',
     organizationalForm: 'Professional societies and companies',
     century: 19,
-    imageUrl: '/images/victorian-engineers.jpg'
+    imageUrl: '/images/victorian-engineers.png'
   },
   {
     id: '2',
@@ -41,6 +41,6 @@ export const sceniuses: Scenius[] = [
     historicalSignificance: 'Birth of the modern world',
     organizationalForm: 'Patronage system',
     century: 15,
-    imageUrl: '/images/florentine-renaissance.jpg'
+    imageUrl: '/images/Florentine-Renaissance.png'
   }
 ]; 

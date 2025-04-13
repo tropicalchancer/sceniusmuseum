@@ -9,33 +9,50 @@ interface SceniusCardProps {
 export default function SceniusCard({ scenius, onClick }: SceniusCardProps) {
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300"
+      className="art-deco-card rounded-none overflow-hidden cursor-pointer"
       onClick={onClick}
     >
-      <div className="relative h-48 w-full">
+      <div className="relative h-48 w-full bg-gray-100">
+        <div className="absolute inset-0 border-8 border-[var(--art-deco-gold)] z-10 pointer-events-none" />
         <Image
           src={scenius.imageUrl || '/images/placeholder.jpg'}
           alt={scenius.name}
           fill
-          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={false}
+          loading="lazy"
+          quality={75}
+          className="object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-90"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/images/placeholder.jpg';
+          }}
         />
       </div>
-      <div className="p-4">
-        <h3 className="text-xl font-bold mb-2">{scenius.name}</h3>
-        <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-          <span>{scenius.geographicLocation}</span>
-          <span>•</span>
-          <span>{scenius.century}th Century</span>
+      <div className="p-6 border-t-2 border-[var(--art-deco-gold)]">
+        <h3 className="text-xl font-bold mb-2 text-[var(--art-deco-black)] uppercase tracking-wider">
+          {scenius.name}
+        </h3>
+        <div className="flex items-center gap-2 text-sm text-[var(--art-deco-navy)] mb-3">
+          <span className="font-medium">{scenius.geographicLocation}</span>
+          <span className="text-[var(--art-deco-gold)]">•</span>
+          <span className="font-medium">{scenius.century}th Century</span>
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-gray-700">{scenius.category}</span>
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-sm font-bold text-[var(--art-deco-emerald)] uppercase tracking-wider">
+            {scenius.category}
+          </span>
           <div className="flex items-center gap-1">
             <span className="text-sm font-medium">Impact:</span>
-            <span className="text-sm font-bold text-blue-600">{scenius.impactScore}</span>
+            <span className="text-lg font-bold text-[var(--art-deco-gold)]">
+              {scenius.impactScore}
+            </span>
           </div>
         </div>
-        <div className="mt-2">
-          <p className="text-sm text-gray-600 line-clamp-2">{scenius.description}</p>
+        <div className="mt-2 pt-3 border-t border-gray-200">
+          <p className="text-sm text-[var(--art-deco-navy)] line-clamp-2">
+            {scenius.description}
+          </p>
         </div>
       </div>
     </div>

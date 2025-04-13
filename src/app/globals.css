@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --art-deco-gold: #D4AF37;
+  --art-deco-black: #1A1A1A;
+  --art-deco-cream: #F5F5F0;
+  --art-deco-emerald: #046B4B;
+  --art-deco-navy: #1B365D;
 }
 
 @theme inline {
@@ -23,4 +28,120 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--art-deco-cream);
+  background-image: 
+    linear-gradient(30deg, var(--art-deco-black) 12%, transparent 12.5%, transparent 87%, var(--art-deco-black) 87.5%, var(--art-deco-black)),
+    linear-gradient(150deg, var(--art-deco-black) 12%, transparent 12.5%, transparent 87%, var(--art-deco-black) 87.5%, var(--art-deco-black)),
+    linear-gradient(30deg, var(--art-deco-black) 12%, transparent 12.5%, transparent 87%, var(--art-deco-black) 87.5%, var(--art-deco-black)),
+    linear-gradient(150deg, var(--art-deco-black) 12%, transparent 12.5%, transparent 87%, var(--art-deco-black) 87.5%, var(--art-deco-black)),
+    linear-gradient(60deg, rgba(26,26,26,0.1) 25%, transparent 25.5%, transparent 75%, rgba(26,26,26,0.1) 75%, rgba(26,26,26,0.1)),
+    linear-gradient(60deg, rgba(26,26,26,0.1) 25%, transparent 25.5%, transparent 75%, rgba(26,26,26,0.1) 75%, rgba(26,26,26,0.1));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.header-container {
+  position: relative;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--art-deco-black);
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.art-deco-title {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--art-deco-gold);
+  text-shadow: 
+    3px 3px 0 var(--art-deco-black),
+    -1px -1px 0 var(--art-deco-black),
+    1px -1px 0 var(--art-deco-black),
+    -1px 1px 0 var(--art-deco-black),
+    1px 1px 0 var(--art-deco-black);
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.art-deco-subtitle {
+  color: var(--art-deco-cream);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.art-deco-title::before,
+.art-deco-title::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100px;
+  background: var(--art-deco-gold);
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.art-deco-title::before {
+  left: -120px;
+}
+
+.art-deco-title::after {
+  right: -120px;
+}
+
+.art-deco-card {
+  background: white;
+  border: 1px solid var(--art-deco-gold);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-deco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+}
+
+.art-deco-button {
+  background: var(--art-deco-gold);
+  color: var(--art-deco-black);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.art-deco-button:hover {
+  background: var(--art-deco-black);
+  color: var(--art-deco-gold);
+}
+
+.art-deco-select {
+  border: 2px solid var(--art-deco-gold);
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em;
+  padding-right: 2.5rem;
 }
