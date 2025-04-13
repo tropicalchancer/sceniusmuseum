@@ -9,10 +9,10 @@ interface SceniusCardProps {
 export default function SceniusCard({ scenius, onClick }: SceniusCardProps) {
   return (
     <div
-      className="art-deco-card rounded-none overflow-hidden cursor-pointer"
+      className="art-deco-card rounded-none overflow-hidden cursor-pointer backdrop-blur-sm bg-white/95 hover:bg-white/100 transition-colors duration-300"
       onClick={onClick}
     >
-      <div className="relative h-48 w-full bg-gray-100">
+      <div className="relative h-48 w-full">
         <div className="absolute inset-0 border-8 border-[var(--art-deco-gold)] z-10 pointer-events-none" />
         <Image
           src={scenius.imageUrl || '/images/placeholder.jpg'}

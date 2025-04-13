@@ -11,12 +11,12 @@ export default function SceniusModal({ scenius, onClose }: SceniusModalProps) {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-      <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-[var(--art-deco-gold)]">
-        <div className="relative h-96 w-full bg-gray-100">
+    <div className="fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50 p-4">
+      <div className="bg-white/95 w-full max-w-4xl max-h-[90vh] overflow-y-auto border-2 border-[var(--art-deco-gold)] shadow-2xl">
+        <div className="relative h-96 w-full">
           <div className="absolute inset-0 border-8 border-[var(--art-deco-gold)] z-10 pointer-events-none" />
           {isImageLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+            <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 border-4 border-[var(--art-deco-gold)] border-t-transparent rounded-full animate-spin" />
             </div>
           )}
