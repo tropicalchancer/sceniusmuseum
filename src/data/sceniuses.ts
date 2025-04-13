@@ -62,7 +62,7 @@ export const sceniuses: Scenius[] = [
     historicalSignificance: 'Set the foundation for existentialist and phenomenological thought in modern philosophy',
     organizationalForm: 'University seminars, philosophical societies',
     century: 19,
-    imageUrl: '/images/placeholder.jpg'
+    imageUrl: '/images/german-idealists.png'
   },
   {
     id: '4',
@@ -83,7 +83,7 @@ export const sceniuses: Scenius[] = [
     historicalSignificance: 'Strong ideological influence, but few practical successes',
     organizationalForm: 'Communes, cooperative communities, philosophical societies',
     century: 19,
-    imageUrl: '/images/placeholder.jpg'
+    imageUrl: '/images/utopian-socialists.png'
   },
   {
     id: '5',
@@ -104,6 +104,6 @@ export const sceniuses: Scenius[] = [
     historicalSignificance: 'Strong impact on Russian revolutionary thought and anarchism',
     organizationalForm: 'Underground groups, secret societies, revolutionary networks',
     century: 19,
-    imageUrl: '/images/placeholder.jpg'
+    imageUrl: '/images/russian-nihilists.png'
   }
 ]; 
